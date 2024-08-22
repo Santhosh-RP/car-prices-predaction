@@ -1,32 +1,36 @@
-# <h1>End-to-End Car Sales predaction
-![alt text](image.png)
-## project structure 
-├── Car_Sales_predaction /
-│   ├── data/
-│   │   ├── raw/                  # Raw data files
-│   │   ├── processed/            # Processed data files
-│   ├── notebooks/                # Jupyter notebooks for exploration
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── config.py             # Configuration file
-│   │   ├── data_processing.py    # Data preprocessing scripts
-│   │   ├── feature_engineering.py # Feature engineering scripts
-│   │   ├── model.py              # Model building, training, and evaluation
-│   │   ├── predict.py            # Prediction script
-│   │   ├── utils.py              # Utility functions (e.g., for logging, exception handling)
-│   ├── models/                   # Trained models
-│   ├── logs/                     # Log files
-│   ├── tests/                    # Test scripts
-│   ├── deployment/
-│   │   ├── app.py                # Flask/Django app for deployment
-│   │   ├── wsgi.py               # WSGI entry point for web app
-│   │   ├── requirements.txt      # Python dependencies
-│   │   ├── Dockerfile            # Docker configuration for deployment
-│   ├── config/
-│   │   ├── logging_config.yaml   # Logging configuration file
-│   │   ├── config.yaml           # Project configuration file
-│   ├── README.md                 # Project overview and instructions
-│   ├── setup.py                  # For package installation
+# <h1>End-to-End Car Sales predaction </h1>
+![alt text](<images (2).jpeg>)
+# Car Sales Prediction Project
+
+## Project Structure
+
+```plaintext
+Car_Sales_Prediction/
+├── data/
+│   ├── raw/                  # Raw data files
+│   ├── processed/            # Processed data files
+├── notebooks/                # Jupyter notebooks for exploration
+├── src/
+│   ├── __init__.py
+│   ├── config.py             # Configuration file
+│   ├── data_processing.py    # Data preprocessing scripts
+│   ├── feature_engineering.py # Feature engineering scripts
+│   ├── model.py              # Model building, training, and evaluation
+│   ├── predict.py            # Prediction script
+│   ├── utils.py              # Utility functions (e.g., for logging, exception handling)
+├── models/                   # Trained models
+├── logs/                     # Log files
+├── tests/                    # Test scripts
+├── deployment/
+│   ├── app.py                # Flask/Django app for deployment
+│   ├── wsgi.py               # WSGI entry point for web app
+│   ├── requirements.txt      # Python dependencies
+│   ├── Dockerfile            # Docker configuration for deployment
+├── config/
+│   ├── logging_config.yaml   # Logging configuration file
+│   ├── config.yaml           # Project configuration file
+├── README.md                 # Project overview and instructions
+├── setup.py                  # For package installation
 
 # Dataset Description
 1. brand: The make or manufacturer of the car (e.g., Toyota, Ford, BMW).

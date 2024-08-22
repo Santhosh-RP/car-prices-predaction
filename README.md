@@ -1,5 +1,6 @@
 # <h1>End-to-End Car Sales predaction </h1>
-![alt text](<images (2).jpeg>)
+![images (2)](https://github.com/user-attachments/assets/074771f4-70ee-4816-857f-53d1f1854784)
+
 # Car Sales Prediction Project
 
 ## Project Structure

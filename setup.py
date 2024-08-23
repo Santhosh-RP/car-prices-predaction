@@ -1,33 +1,27 @@
-from setuptools import find_packages, setup
+from setuptools import find_packages,setup
+from typing import List
+
+HYPEN_E_DOT='-e .'
+def get_requirements(file_path:str)->List[str]:
+    '''
+    this function will return the list of requirements
+    '''
+    requirements=[]
+    with open(file_path) as file_obj:
+        requirements=file_obj.readlines()
+        requirements=[req.replace("\n","") for req in requirements]
+
+        if HYPEN_E_DOT in requirements:
+            requirements.remove(HYPEN_E_DOT)
+    
+    return requirements
 
 setup(
-    name="CarSalesPrediction",  # Replace with your project name
-    version="0.1.0",
-    description="A machine learning project to predict car sales.",
-    author="Ailneni Santhosh",  # Replace with your name
-    author_email="santhoshainleni@gmail.com",  # Replace with your email
-    url="https://github.com/yourusername/CarSalesPrediction",  # Replace with your project's GitHub URL
-    packages=find_packages(),
-    include_package_data=True,
-    install_requires=[
-        "pandas>=1.0.0",
-        "numpy>=1.18.0",
-        "scikit-learn>=0.22.0",
-        "matplotlib>=3.1.0",
-        "seaborn>=0.10.0",
-        "flask>=1.1.0",
-        "gunicorn>=20.0.0",  # If using Gunicorn for deployment
-        "PyYAML>=5.3.0",  # For YAML config files
-    ],
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    python_requires='>=3.6',
-    entry_points={
-        'console_scripts': [
-            'run_model=src.model:main',  # Example command-line tool
-        ],
-    },
+name='car_sales_predaction',
+version='0.0.1',
+author='santhosh',
+author_email='santhoshch16195@gmail.com',
+packages=find_packages(),
+install_requires=get_requirements('requirements.txt')
+
 )

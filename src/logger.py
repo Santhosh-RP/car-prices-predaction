@@ -1,40 +1,25 @@
 import logging
 import os
+from datetime import datetime
 
-# Ensure that the logs directory exists
-if not os.path.exists('logs'):
-    os.makedirs('logs')
+# Generate the log file name with timestamp
+LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 
-# Set up basic configuration for logging
-LOG_FORMAT = '%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+# Define the path to the 'logs' directory
+logs_directory = os.path.join(os.getcwd(), "logs")
+
+# Ensure the 'logs' directory exists
+os.makedirs(logs_directory, exist_ok=True)
+
+# Define the full path to the log file
+LOG_FILE_PATH = os.path.join(logs_directory, LOG_FILE)
+
+# Configure logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Change to DEBUG, INFO, WARNING, ERROR, CRITICAL as needed
-    format=LOG_FORMAT,
-    handlers=[
-        logging.FileHandler('logs/application.log'),  # Log to file
-        logging.StreamHandler()  # Log to console
-    ]
+    filename=LOG_FILE_PATH,
+    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
 )
 
-# Create a custom logger
-def get_logger(logger_name: str) -> logging.Logger:
-    """
-    Function to create and return a logger instance with a specified name.
-
-    Args:
-    - logger_name (str): The name of the logger.
-
-    Returns:
-    - logging.Logger: Configured logger instance.
-    """
-    logger = logging.getLogger(logger_name)
-    logger.setLevel(logging.DEBUG)  # Set the logging level to DEBUG; can be customized
-
-    return logger
-
-# Example Usage
-if __name__ == "__main__":
-    logger = get_logger(__name__)
-    logger.debug("This is a debug message")
-    logger.info("This is an info message")
-    logger.critical("This is a critical message")
+# Optional: Log a test message to confirm configuration
+logging.info("Logging setup complete.")
